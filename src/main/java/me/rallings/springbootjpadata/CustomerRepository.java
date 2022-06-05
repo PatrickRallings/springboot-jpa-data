@@ -20,8 +20,8 @@ import java.util.List;
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
     //  The Spring Data JPA dependency will automatically
-    //create a method within the autoimplemented class that
-    //will return a list of all of the customer objects
+    //create a method within the auto-implemented class that
+    //will return a list of all the customer objects
     //(tuples/rows) that contain the same last name as the
     //one given as an argument
     List<Customer> findByLastName(String lastName);
