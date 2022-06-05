@@ -26,7 +26,7 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
     //one given as an argument
     List<Customer> findByLastName(String lastName);
 
-    //  Similiar to the findByLastName, this method will
+    //  Similar to the findByLastName, this method will
     //be automatically created when the interface is implemented
     //and the method will return a Customer object (tuple)
     //that has the unique id given
