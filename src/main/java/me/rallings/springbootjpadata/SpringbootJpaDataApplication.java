@@ -24,7 +24,7 @@ public class SpringbootJpaDataApplication {
     public static void main(String[] args) {
         //Naming app as something that context should be defined for
         ApplicationContext context = SpringApplication.run(SpringbootJpaDataApplication.class, args);
-        //Printing out the names of each bean used by the application
+        //Printing out the names of each bean used by the app
         for(String s : context.getBeanDefinitionNames()){
             System.out.println(s);
         }
