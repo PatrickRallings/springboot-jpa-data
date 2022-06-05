@@ -23,13 +23,13 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
     //create a method within the auto-implemented class that
     //will return a list of all the customer objects
     //(tuples/rows) that contain the same last name as the
-    //one given as an argument
+    //one given as an argument.
     List<Customer> findByLastName(String lastName);
 
     //  Similar to the findByLastName, this method will
     //be automatically created when the interface is implemented
     //and the method will return a Customer object (tuple)
-    //that has the unique id given
+    //that has the unique id given.
     Customer findById(long id);
 
 }
