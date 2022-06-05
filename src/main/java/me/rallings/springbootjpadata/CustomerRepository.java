@@ -15,9 +15,21 @@ import java.util.List;
 //  The CrudRepository that we are extending from includes methods for
 //adding, deleting and more (this si also the case for JPARepository,
 //which extends the CrudRepository as well).
+//  I don't need to ever write a class for the CustomerRepository
+//because the Spring Data JPA dependency does that for me.
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
+    //  The Spring Data JPA dependency will automatically
+    //create a method within the autoimplemented class that
+    //will return a list of all of the customer objects
+    //(tuples/rows) that contain the same last name as the
+    //one given as an argument
     List<Customer> findByLastName(String lastName);
 
+    //  Similiar to the findByLastName, this method will
+    //be automatically created when the interface is implemented
+    //and the method will return a Customer object (tuple)
+    //that has the unique id given
     Customer findById(long id);
+
 }
