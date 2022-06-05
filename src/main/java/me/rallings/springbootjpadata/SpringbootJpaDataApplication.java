@@ -57,7 +57,7 @@ public class SpringbootJpaDataApplication {
             repository.findByLastName("Rallings").forEach(tuple -> {
                 log.info(tuple.toString());
             });
-            //  for (Customer bauer : repository.findByLastName("Rallings")) {
+            //  for (Customer tuple : repository.findByLastName("Rallings")) {
             //  log.info(tuple.toString());
             // }
             log.info("");
