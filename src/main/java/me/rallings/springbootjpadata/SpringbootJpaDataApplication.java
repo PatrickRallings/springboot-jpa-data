@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 
@@ -21,10 +22,15 @@ public class SpringbootJpaDataApplication {
     private static final Logger log = LoggerFactory.getLogger(SpringbootJpaDataApplication.class);
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootJpaDataApplication.class, args);
+        //Naming app as something that context should be defined for
+        ApplicationContext context = SpringApplication.run(SpringbootJpaDataApplication.class, args);
+        //Printing out the names of each bean used by the application
+        for(String s : context.getBeanDefinitionNames()){
+            System.out.println(s);
+        }
     }
 
-
+    //@Bean is an instance of a class that is managed by the spring container
     @Bean
     public CommandLineRunner demo(CustomerRepository repository) {
         return (args) -> {
